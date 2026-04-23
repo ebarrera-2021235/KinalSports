@@ -1,0 +1,178 @@
+[2026-02-06 09:15:04 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 09:15:05 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 09:15:05 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 09:15:05 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 09:15:15 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ5IA3SKIGM:00000001","RequestPath":"/api/v1/health","ConnectionId":"0HNJ5IA3SKIGM"}
+[2026-02-06 09:15:15 INF] HTTP GET /api/v1/health responded 200 in 60.9174 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5IA3SKIGM:00000001","ConnectionId":"0HNJ5IA3SKIGM"}
+[2026-02-06 10:10:54 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 10:10:54 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 10:10:54 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 10:10:54 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 10:11:37 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ5J9JT4113:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5J9JT4113"}
+[2026-02-06 10:11:37 INF] HTTP POST /api/v1/auth/register responded 415 in 110.8386 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4113:00000001","ConnectionId":"0HNJ5J9JT4113"}
+[2026-02-06 10:11:57 INF] HTTP POST /api/v1/auth/Login responded 415 in 4.5762 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4113:00000002","ConnectionId":"0HNJ5J9JT4113"}
+[2026-02-06 10:12:35 INF] HTTP POST /api/v1/auth/register responded 415 in 5.9122 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4113:00000003","ConnectionId":"0HNJ5J9JT4113"}
+[2026-02-06 10:16:02 WRN] Failed login attempt {"EventId":{"Id":1003,"Name":"LogFailedLoginAttempt"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c74860a5-a895-4e3f-a08b-83f79f31920e","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNJ5J9JT4115:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNJ5J9JT4115"}
+[2026-02-06 10:16:02 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNJ5J9JT4115:00000001","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNJ5J9JT4115"}
+System.UnauthorizedAccessException: Credenciales inválidas
+   at AuthService.Application.Services.AuthService.LoginAsync(LoginDto loginDto) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 178
+   at AuthService.Api.Controllers.AuthController.Login(LoginDto loginDto) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 18
+   at lambda_method28(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-02-06 10:16:02 INF] HTTP POST /api/v1/auth/login responded 401 in 189.8380 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4115:00000001","ConnectionId":"0HNJ5J9JT4115"}
+[2026-02-06 10:16:28 INF] User login succeeded {"EventId":{"Id":1002,"Name":"LogUserLoggedIn"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"c74860a5-a895-4e3f-a08b-83f79f31920e","ActionName":"AuthService.Api.Controllers.AuthController.Login (AuthService.Api)","RequestId":"0HNJ5J9JT4115:00000002","RequestPath":"/api/v1/auth/login","ConnectionId":"0HNJ5J9JT4115"}
+[2026-02-06 10:16:28 INF] HTTP POST /api/v1/auth/login responded 200 in 296.6245 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4115:00000002","ConnectionId":"0HNJ5J9JT4115"}
+[2026-02-06 10:33:17 INF] HTTP POST /api/v1/auth/register responded 415 in 7.7853 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4117:00000001","ConnectionId":"0HNJ5J9JT4117"}
+[2026-02-06 10:33:38 INF] HTTP POST /api/v1/auth/register responded 415 in 1.1976 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4117:00000002","ConnectionId":"0HNJ5J9JT4117"}
+[2026-02-06 10:33:51 INF] HTTP POST /api/v1/auth/register responded 415 in 1.9154 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4117:00000003","ConnectionId":"0HNJ5J9JT4117"}
+[2026-02-06 10:42:28 INF] HTTP POST /api/v1/auth/register responded 415 in 1.1276 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5J9JT4119:00000001","ConnectionId":"0HNJ5J9JT4119"}
+[2026-02-06 10:43:33 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 10:43:33 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 10:43:34 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 10:43:34 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 10:48:00 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 10:48:00 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 10:48:00 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 10:48:00 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 10:56:18 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 10:56:18 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 10:56:18 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 10:56:18 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 10:56:21 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ5K2JMPC7K:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7K"}
+[2026-02-06 10:56:21 INF] HTTP POST /api/v1/auth/register responded 400 in 125.2705 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5K2JMPC7K:00000001","ConnectionId":"0HNJ5K2JMPC7K"}
+[2026-02-06 10:59:16 INF] User ebarrera registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"180295a6-39b6-4cfa-a323-567b2bfd7694","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K2JMPC7M:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7M"}
+[2026-02-06 10:59:16 INF] HTTP POST /api/v1/auth/register responded 200 in 515.1113 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5K2JMPC7M:00000001","ConnectionId":"0HNJ5K2JMPC7M"}
+[2026-02-06 10:59:16 WRN] Validación de certificados SSL deshabilitada. Solo usar en desarrollo. {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"180295a6-39b6-4cfa-a323-567b2bfd7694","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K2JMPC7M:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7M"}
+[2026-02-06 10:59:17 ERR] La autenticación de Gmail falló. Verifica la contraseña de aplicación. {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"180295a6-39b6-4cfa-a323-567b2bfd7694","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K2JMPC7M:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7M"}
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+[2026-02-06 10:59:17 ERR] Error al enviar el email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"180295a6-39b6-4cfa-a323-567b2bfd7694","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K2JMPC7M:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7M"}
+System.InvalidOperationException: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 153
+[2026-02-06 10:59:17 ERR] Error al enviar el email de verificación {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"180295a6-39b6-4cfa-a323-567b2bfd7694","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K2JMPC7M:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K2JMPC7M"}
+System.InvalidOperationException: Error al enviar el email: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> System.InvalidOperationException: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-56707442132sm984098e0c.19 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 153
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 174
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 139
+[2026-02-06 11:02:49 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 11:02:49 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 11:02:50 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 11:02:50 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 11:02:53 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ5K68OCTPF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:02:54 WRN] Registration rejected: email already exists {"EventId":{"Id":1004,"Name":"LogRegistrationWithExistingEmail"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:02:54 ERR] An unhandled exception occurred {"SourceContext":"AuthService.Api.Middlewares.GlobalExceptionMiddleware","RequestId":"0HNJ5K68OCTPF:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+AuthService.Application.Exceptions.BusinessException: El email ya existe
+   at AuthService.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 33
+   at AuthService.Api.Controllers.AuthController.Register(RegisterDto registerDto) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Api\Controllers\AuthController.cs:line 27
+   at lambda_method20(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AuthService.Api.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Api\Middlewares\GlobalExceptionMiddleware.cs:line 18
+[2026-02-06 11:02:54 INF] HTTP POST /api/v1/auth/register responded 400 in 192.5605 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5K68OCTPF:00000001","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:03:32 INF] HTTP POST /api/v1/auth/register responded 400 in 36.4059 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5K68OCTPF:00000002","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:03:44 INF] User despinoza registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:03:44 INF] HTTP POST /api/v1/auth/register responded 200 in 500.6234 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5K68OCTPF:00000003","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:03:44 WRN] Validación de certificados SSL deshabilitada. Solo usar en desarrollo. {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+[2026-02-06 11:03:44 ERR] La autenticación de Gmail falló. Verifica la contraseña de aplicación. {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+[2026-02-06 11:03:44 ERR] Error al enviar el email {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+System.InvalidOperationException: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 153
+[2026-02-06 11:03:44 ERR] Error al enviar el email de verificación {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"2f3a532e-b3cc-4a19-b796-1805304b19b2","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5K68OCTPF:00000003","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5K68OCTPF"}
+System.InvalidOperationException: Error al enviar el email: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> System.InvalidOperationException: La autenticación de Gmail falló: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp. Por favor, verifica la contraseña de aplicación.
+ ---> MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. For more information, go to
+5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-5670744d7d4sm973839e0c.20 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 134
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 153
+   --- End of inner exception stack trace ---
+   at AuthService.Application.Services.EmailService.SendEmailAsync(String to, String subject, String body) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 174
+   at AuthService.Application.Services.EmailService.SendEmailVerificationAsync(String email, String username, String token) in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\EmailService.cs:line 29
+   at AuthService.Application.Services.AuthService.<>c__DisplayClass9_0.<<RegisterAsync>b__0>d.MoveNext() in C:\IN6AM\KinalSports\Authentication-service\auth-service\src\AuthService.Application\Services\AuthService.cs:line 139
+[2026-02-06 11:26:42 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 11:26:42 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 11:26:43 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 11:26:43 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
+[2026-02-06 11:26:59 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:26:59 INF] User despinoza registered successfully {"EventId":{"Id":1001,"Name":"LogUserRegistered"},"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:26:59 INF] HTTP POST /api/v1/auth/register responded 200 in 699.8084 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ5KJNGCJKC:00000001","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:27:00 WRN] Validación de certificados SSL deshabilitada. Solo usar en desarrollo. {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:27:01 INF] Email enviado exitosamente {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:27:01 INF] Pipeline de email completado {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:27:01 INF] Email processed {"SourceContext":"AuthService.Application.Services.EmailService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:27:01 INF] Email de verificación enviado {"SourceContext":"AuthService.Application.Services.AuthService","ActionId":"a9ea0e23-6b2f-4183-a826-097a7e1d54c4","ActionName":"AuthService.Api.Controllers.AuthController.Register (AuthService.Api)","RequestId":"0HNJ5KJNGCJKC:00000001","RequestPath":"/api/v1/auth/register","ConnectionId":"0HNJ5KJNGCJKC"}
+[2026-02-06 11:36:30 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-06 11:36:30 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-06 11:36:30 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-06 11:36:30 INF] API de AuthService está ejecutándose en http://localhost:5026. Endpoint de salud: http://localhost:5026/api/v1/health {"SourceContext":"Program"}
