@@ -1,0 +1,8 @@
+[2026-04-24 08:19:56 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-24 08:19:56 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-24 08:19:57 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-24 08:19:57 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}
+[2026-04-24 10:11:49 INF] Checking database connection... {"SourceContext":"Program"}
+[2026-04-24 10:11:49 INF] Database ready. Running seed data... {"SourceContext":"Program"}
+[2026-04-24 10:11:49 INF] Database initialization completed successfully {"SourceContext":"Program"}
+[2026-04-24 10:11:49 INF] AuthService API is running at http://localhost:5156. Health endpoint: http://localhost:5156/health {"SourceContext":"Program"}

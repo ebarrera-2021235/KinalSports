@@ -1,5 +1,5 @@
 //Archivo para manejar las exportaciones mas estricto desde cualquier archivo.
-export {axiosAuth, axiosAdmin} from './api';
+export {axiosAuth, axiosAdmin, handleRefreshToken} from './api';
 export * from './api'
 export * from './auth';
 export * from './admin';

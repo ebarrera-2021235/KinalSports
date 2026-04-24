@@ -1,7 +1,11 @@
 //Hook para manejar la autenticacion del usuario utilizando Zustand
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { login as loginRequest } from '../../../shared/apis'
+import { 
+    login as loginRequest,
+    register,
+    register as registerRequest,
+} from '../../../shared/apis'
 import { showError } from '../../../shared/utils/toast';
 
 export const useAuthStore = create(
@@ -90,7 +94,25 @@ export const useAuthStore = create(
                     set({ error: message, loading: false });
                     return { succes: false, error: message };
                 }
+            },
+            
+            register: async (formData) =>{
+                try{
+                    set({loading: true, error: null})
+                    const {data} = await registerRequest(formData);
+                    set({loading: false})
+                    return{
+                        success: true,
+                        emailVerificationRequired: data?emailVerificationRequired,
+                        data
+                    }
+                }catch(err){
+                    const message = err.response?.data?.message || "Error al iniciar sesión";
+                    set({ error: message, loading: false });
+                    return { succes: false, error: message };
+                }
             }
+
         }),
         {name: 'auth-KS-IN6AM'},
     ),

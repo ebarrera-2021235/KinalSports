@@ -1,20 +1,21 @@
 import dotenv from 'dotenv';
-import { initServer } from './configs/app.js';
 
-// Configurar variables de entorno
+// 1. Cargar variables de entorno PRIMERO
 dotenv.config();
 
-// Manejar errores no capturados
+// 2. Manejo de errores globales
 process.on('uncaughtException', (err) => {
   console.error('Uncaught Exception in Admin Server:', err);
   process.exit(1);
 });
 
-// Manejar promesas rechazadas no manejadas
 process.on('unhandledRejection', (err, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', err);
   process.exit(1);
 });
-// Inicializar servidor admin
-console.log('Starting KinalSports Admin Server...');
-initServer();
+
+// 3. Import dinámico DESPUÉS de cargar dotenv
+import('./configs/app.js').then(({ initServer }) => {
+  console.log('Starting KinalSports Admin Server...');
+  initServer();
+});
