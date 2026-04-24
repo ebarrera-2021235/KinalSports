@@ -91,5 +91,7 @@ export const useAuthStore = create(
                     return { succes: false, error: message };
                 }
             }
-        })),
+        }),
+        {name: 'auth-KS-IN6AM'},
+    ),
 );

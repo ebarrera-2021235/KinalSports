@@ -1,5 +1,6 @@
 //Aca en este archivo se configura para poder conectarnos a cualquiera de los servicios.
 import axios from 'axios';
+import {useAuthStore} from "../../features/auth/store/authStore.js";
 
 //Crear instancia de axios para cada servicio.
 const axiosAuth = axios.create({
@@ -19,4 +20,13 @@ const axiosAdmin = axios.create({
     }
 });
 
-export { axiosAuth, axiosAdmin }; //Exportamos las instancias para que puedan ser utilizadas en otros archivos.
+axiosAdmin.interceptors.request.use((config) => {
+    config._axiosClient = "admin"; //Agregamos una propiedad personalizada para identificar la instancia
+    const token = useAuthStore.getState().token; //Obtenemos el token del store de autenticacion
+    if(token){
+        config.headers.Authorization = `Bearer ${token}`; //Agregamos el token al header de autorizacion
+    }
+    return config;
+})
+
+export { axiosAuth, axiosAdmin }; //Exportamos las instancias para que puedan ser utilizadas en otros archivos. 

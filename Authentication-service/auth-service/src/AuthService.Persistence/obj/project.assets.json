@@ -6553,13 +6553,13 @@
     },
     "AuthService.Application/1.0.0": {
       "type": "project",
-      "path": "../authService.Application/AuthService.Application.csproj",
-      "msbuildProject": "../authService.Application/AuthService.Application.csproj"
+      "path": "../AuthService.Application/AuthService.Application.csproj",
+      "msbuildProject": "../AuthService.Application/AuthService.Application.csproj"
     },
     "AuthService.Domain/1.0.0": {
       "type": "project",
-      "path": "../authService.Domain/AuthService.Domain.csproj",
-      "msbuildProject": "../authService.Domain/AuthService.Domain.csproj"
+      "path": "../AuthService.Domain/AuthService.Domain.csproj",
+      "msbuildProject": "../AuthService.Domain/AuthService.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6578,11 +6578,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Persistence\\AuthService.Persistence.csproj",
+      "projectUniqueName": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
       "projectName": "AuthService.Persistence",
-      "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Persistence\\AuthService.Persistence.csproj",
+      "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
       "packagesPath": "C:\\Users\\soluc\\.nuget\\packages\\",
-      "outputPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Persistence\\obj\\",
+      "outputPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\soluc\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6597,11 +6597,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Application\\AuthService.Application.csproj": {
-              "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Application\\AuthService.Application.csproj"
+            "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj": {
+              "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj"
             },
-            "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Domain\\AuthService.Domain.csproj": {
-              "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\authService.Domain\\AuthService.Domain.csproj"
+            "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj": {
+              "projectPath": "C:\\IN6AM\\.Net\\KinalSports\\Authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj"
             }
           }
         }
